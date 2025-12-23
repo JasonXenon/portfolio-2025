@@ -1,5 +1,5 @@
 <template>
-  <aside class="space-y-10 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5rem)]">
+  <aside class="space-y-6 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5rem)]">
     <!-- Profil -->
     <div>
       <h1 class="text-5xl font-bold text-white mb-4">{{ props.firstName }} {{ props.lastName }}</h1>
@@ -39,30 +39,27 @@
         :aria-label="social.name"
         class="text-gray-400 hover:text-white transition-colors"
       >
-        <component :is="social.icon" class="w-6 h-6 transition-transform hover:scale-110" />
+        <component
+          :is="social.icon"
+          :icon="social.iconProps"
+          class="transition-transform hover:scale-110"
+          size="lg"
+        />
+
       </a>
     </div>
   </aside>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-import { Github, Linkedin } from 'lucide-vue-next'
-
-// Props (optionnel si tu veux passer les données depuis le parent)
+// Props
 const props = defineProps({
-  firstName: {
-    type: String,
-    default: 'Jason',
-  },
-  lastName: {
-    type: String,
-    default: 'Levecq',
-  },
-  jobTitle: {
-    type: String,
-    default: 'Développeur Full Stack',
-  },
+  firstName: { type: String, default: 'Jason' },
+  lastName: { type: String, default: 'Levecq' },
+  jobTitle: { type: String, default: 'Développeur Full Stack' },
   shortBio: {
     type: String,
     default: 'Je construis des expériences digitales accessibles et pixel-perfect pour le web.',
@@ -80,12 +77,14 @@ const socials = [
   {
     name: 'GitHub',
     url: 'https://github.com/JasonXenon',
-    icon: Github,
+    icon: FontAwesomeIcon,
+    iconProps: faGithub,
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jason-levecq/',
-    icon: Linkedin,
+    icon: FontAwesomeIcon,
+    iconProps: faLinkedin,
   },
 ]
 </script>
