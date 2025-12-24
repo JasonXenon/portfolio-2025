@@ -1,18 +1,18 @@
 <template>
-  <section id="projects" class="bg-slate-900 text-gray-300 py-20 px-6 border-t border-slate-800/50">
+  <section id="projects" class="text-gray-300 py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-3xl">
       <div class="mb-16">
-        <h2 class="text-blue-400 font-mono text-sm tracking-widest uppercase mb-2">
+        <h2 class="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-2">
           02. Réalisations
         </h2>
-        <h3 class="text-3xl font-bold text-white tracking-tight">Projets sélectionnés</h3>
+        <h3 class="text-3xl font-bold text-white tracking-tight">Projets <span class="text-emerald-400">sélectionnés</span></h3>
       </div>
 
       <div class="space-y-4">
         <div
           v-for="project in projects"
           :key="project.id"
-          class="group relative p-6 -mx-6 rounded-2xl transition-all duration-300 hover:bg-slate-800/40 border border-transparent hover:border-slate-700/50"
+          class="group relative p-6 -mx-6 rounded-2xl transition-all duration-300 hover:bg-slate-800/40 border border-transparent hover:border-red-900/30"
         >
           <a
             v-if="project.live"
@@ -25,7 +25,7 @@
           <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div class="space-y-3">
               <h4
-                class="text-xl font-semibold text-slate-100 group-hover:text-blue-400 transition-colors flex items-center gap-2"
+                class="text-xl font-semibold text-slate-100 transition-colors flex items-center gap-2"
               >
                 {{ project.title }}
                 <svg
@@ -34,7 +34,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="2"
                   stroke="currentColor"
-                  class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-400"
+                  class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
                 >
                   <path
                     stroke-linecap="round"
@@ -64,7 +64,7 @@
                 v-if="project.github"
                 :href="project.github"
                 :target="project.target"
-                class="p-1 text-slate-500 hover:text-white transition-colors hover:scale-110 transform"
+                class="p-1 text-slate-500 hover:text-emerald-400 transition-colors hover:scale-110 transform"
                 title="Code source"
               >
                 <span class="sr-only">GitHub</span>
@@ -98,7 +98,7 @@ const projects = [
     id: 2,
     title: 'EcoSens — Gestion budgétaire intelligente',
     description:
-      '"Inspirée par la complexité des tableurs Excel traditionnels, EcoSens simplifie le suivi des finances personnelles. L\'application permet une catégorisation sur mesure et l\'automatisation des paiements récurrents avec rappels intelligents pour ne plus rien oublier."',
+      "Inspirée par la complexité des tableurs Excel traditionnels, EcoSens simplifie le suivi des finances personnelles. L'application permet une catégorisation sur mesure et l'automatisation des paiements récurrents avec rappels intelligents pour ne plus rien oublier.",
     stack: ['Vue.js', 'Laravel', 'Chart.js'],
     github: 'https://github.com/JasonXenon/ecoSens',
     live: 'https://ecosens.jldev.be',
