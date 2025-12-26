@@ -1,13 +1,24 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import SideBarProfile from '@/components/sections/SideBarProfile.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
+import PortfolioToggle from '@/components/PortfolioToggle.vue'
+import { usePortfolio } from '@/composables/usePortfolio'
+
+const { initializePortfolio } = usePortfolio()
+
+onMounted(() => {
+  initializePortfolio()
+})
 </script>
 
 <template>
   <section
     class="min-h-screen bg-gradient-to-br from-red-950 via-slate-900 to-emerald-950 text-gray-300"
   >
+    <PortfolioToggle />
+
     <div class="max-w-7xl mx-auto px-6 py-20">
       <!-- Layout global -->
       <div class="grid lg:grid-cols-[400px_1fr] gap-16">

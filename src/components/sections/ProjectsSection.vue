@@ -5,13 +5,26 @@
         <h2 class="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-2">
           02. Réalisations
         </h2>
-        <h3 class="text-3xl font-bold text-white tracking-tight">Projets <span class="text-emerald-400">sélectionnés</span></h3>
+        <h3 class="text-3xl font-bold text-white tracking-tight">
+          Projets <span class="text-emerald-400">sélectionnés</span>
+        </h3>
       </div>
 
-      <div class="space-y-4">
+      <TransitionGroup
+        name="project"
+        tag="div"
+        class="space-y-4"
+        enter-active-class="transition-all duration-500 ease-out"
+        leave-active-class="transition-all duration-300 ease-in absolute"
+        enter-from-class="opacity-0 translate-x-12"
+        enter-to-class="opacity-100 translate-x-0"
+        leave-from-class="opacity-100 translate-x-0"
+        leave-to-class="opacity-0 -translate-x-12"
+      >
         <div
-          v-for="project in projects"
-          :key="project.id"
+          v-for="(project, index) in projects"
+          :key="`${currentPortfolio}-${project.id}`"
+          :style="{ transitionDelay: `${index * 100}ms` }"
           class="group relative p-6 -mx-6 rounded-2xl transition-all duration-300 hover:bg-slate-800/40 border border-transparent hover:border-red-900/30"
         >
           <a
@@ -77,32 +90,69 @@
             </div>
           </div>
         </div>
-      </div>
+      </TransitionGroup>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const projects = [
-  {
-    id: 1,
-    title: 'TeamBudget — Plateforme de transparence financière',
-    description:
-      "Application née d'un besoin de confiance : elle permet aux clubs sportifs de justifier l'utilisation des cotisations auprès des parents. L'outil offre une transparence totale sur les investissements du staff, répondant concrètement à la question : « Où va mon argent ? »",
-    stack: ['Vue.js', 'Laravel', 'Tailwind'],
-    github: 'https://github.com/JasonXenon/TeamBudget',
-    live: '#',
-    target: '_blank',
-  },
-  {
-    id: 2,
-    title: 'EcoSens — Gestion budgétaire intelligente',
-    description:
-      "Inspirée par la complexité des tableurs Excel traditionnels, EcoSens simplifie le suivi des finances personnelles. L'application permet une catégorisation sur mesure et l'automatisation des paiements récurrents avec rappels intelligents pour ne plus rien oublier.",
-    stack: ['Vue.js', 'Laravel', 'Chart.js'],
-    github: 'https://github.com/JasonXenon/ecoSens',
-    live: 'https://ecosens.jldev.be',
-    target: '_blank',
-  },
-]
+import { computed } from 'vue'
+import { usePortfolio } from '@/composables/usePortfolio'
+
+const { currentPortfolio } = usePortfolio()
+
+const allProjects = {
+  laravel: [
+    {
+      id: 1,
+      title: 'TeamBudget — Plateforme de transparence financière',
+      description:
+        "Application née d'un besoin de confiance : elle permet aux clubs sportifs de justifier l'utilisation des cotisations auprès des parents. L'outil offre une transparence totale sur les investissements du staff, répondant concrètement à la question : « Où va mon argent ? »",
+      stack: ['Vue.js', 'Laravel', 'Tailwind'],
+      github: 'https://github.com/JasonXenon/TeamBudget',
+      live: '#',
+      target: '_blank',
+    },
+    {
+      id: 2,
+      title: 'EcoSens — Gestion budgétaire intelligente',
+      description:
+        "Inspirée par la complexité des tableurs Excel traditionnels, EcoSens simplifie le suivi des finances personnelles. L'application permet une catégorisation sur mesure et l'automatisation des paiements récurrents avec rappels intelligents pour ne plus rien oublier.",
+      stack: ['Vue.js', 'Laravel', 'Chart.js'],
+      github: 'https://github.com/JasonXenon/ecoSens',
+      live: 'https://ecosens.jldev.be',
+      target: '_blank',
+    },
+  ],
+  dotnet: [
+    {
+      id: 1,
+      title: 'Enterprise Resource Planning',
+      description:
+        "Système de gestion d'entreprise complet développé avec .NET Core et Angular. Gère la comptabilité, les stocks, les ressources humaines et la relation client dans une interface moderne et intuitive.",
+      stack: ['C#', '.NET Core', 'Angular', 'SQL Server'],
+      github: '#',
+      live: '#',
+      target: '_blank',
+    },
+    {
+      id: 2,
+      title: 'API Gateway Microservices',
+      description:
+        'Architecture microservices avec API Gateway pour une application e-commerce à grande échelle. Implémente des patterns CQRS et Event Sourcing pour garantir la scalabilité et la résilience du système.',
+      stack: ['.NET', 'Azure', 'Docker', 'RabbitMQ'],
+      github: '#',
+      live: '#',
+      target: '_blank',
+    },
+  ],
+}
+
+const projects = computed(() => allProjects[currentPortfolio.value])
 </script>
+
+<style scoped>
+.project-move {
+  transition: all 0.5s ease;
+}
+</style>
