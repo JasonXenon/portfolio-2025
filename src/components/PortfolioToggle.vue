@@ -6,13 +6,20 @@
       <button
         @click="setPortfolio('laravel')"
         :class="[
-          'px-5 py-2.5 rounded-md text-sm font-mono transition-all duration-300',
+          'relative rounded-md p-[1px] transition-all duration-300',
           currentPortfolio === 'laravel'
-            ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/30'
-            : 'text-slate-400 hover:text-white hover:bg-slate-800/50',
+            ? 'bg-gradient-to-br from-red-900 via-slate-700 to-emerald-900'
+            : 'bg-gradient-to-br from-red-950/40 via-slate-800/40 to-emerald-950/40 hover:from-red-900/70 hover:to-emerald-900/70',
         ]"
       >
-        <span class="flex items-center gap-2">
+        <span
+          :class="[
+            'flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-mono transition-all duration-300',
+            currentPortfolio === 'laravel'
+              ? 'bg-slate-900 text-white shadow-lg shadow-emerald-500/20'
+              : 'bg-slate-900/60 text-slate-400 hover:text-white',
+          ]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,13 +41,20 @@
       <button
         @click="setPortfolio('dotnet')"
         :class="[
-          'px-5 py-2.5 rounded-md text-sm font-mono transition-all duration-300',
+          'relative rounded-md p-[1px] transition-all duration-300',
           currentPortfolio === 'dotnet'
-            ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
-            : 'text-slate-400 hover:text-white hover:bg-slate-800/50',
+            ? 'bg-gradient-to-br from-red-900 via-slate-700 to-indigo-900'
+            : 'bg-gradient-to-br from-red-950/40 via-slate-800/40 to-indigo-950/40 hover:from-red-900/70 hover:to-indigo-900/70',
         ]"
       >
-        <span class="flex items-center gap-2">
+        <span
+          :class="[
+            'flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-mono transition-all duration-300',
+            currentPortfolio === 'dotnet'
+              ? 'bg-slate-900 text-white shadow-lg shadow-indigo-500/20'
+              : 'bg-slate-900/60 text-slate-400 hover:text-white',
+          ]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -70,15 +70,37 @@ const { currentPortfolio } = usePortfolio()
 
 const portfolioData = {
   laravel: {
-    mainDescription: "Je suis un développeur passionné par la création d'interfaces utilisateur accessibles et pixel-perfect. Mon travail se situe à l'intersection du design et de l'ingénierie, créant des expériences méticuleusement construites pour la performance.",
-    personalNote: "Lorsque je m'éloigne de mon clavier, je cultive mon équilibre entre sport et vie personnelle : que ce soit sur un terrain de badminton, en salle de musculation ou lors de moments précieux en famille pour recharger les batteries.",
-    skills: ['Laravel', 'Vue.js', 'TypeScript', 'Livewire', 'Node.js', 'Tailwind CSS', 'JavaScript', 'Git']
+    mainDescription:
+      "Je suis un développeur passionné par la création d'interfaces utilisateur accessibles et pixel-perfect. Mon travail se situe à l'intersection du design et de l'ingénierie, créant des expériences méticuleusement construites pour la performance.",
+    personalNote:
+      "Lorsque je m'éloigne de mon clavier, je cultive mon équilibre entre sport et vie personnelle : que ce soit sur un terrain de badminton, en salle de musculation ou lors de moments précieux en famille pour recharger les batteries.",
+    skills: [
+      'Laravel',
+      'Vue.js',
+      'TypeScript',
+      'Livewire',
+      'Node.js',
+      'Tailwind CSS',
+      'JavaScript',
+      'Git',
+    ],
   },
   dotnet: {
-    mainDescription: "Développeur spécialisé dans l'écosystème Microsoft, je conçois des applications robustes et scalables. Mon expertise en C# et .NET me permet de créer des solutions d'entreprise performantes et maintenables.",
-    personalNote: "Passionné par l'architecture logicielle et les patterns de conception, je m'efforce de produire du code clean et testable qui facilite la collaboration en équipe.",
-    skills: ['C#', '.NET Core', 'Angular', 'TypeScript', 'Azure', 'SQL Server', 'Entity Framework', 'REST APIs']
-  }
+    mainDescription:
+      "Développeur spécialisé dans l'écosystème Microsoft, je conçois des applications robustes et scalables. Mon expertise en C# et .NET me permet de créer des solutions d'entreprise performantes et maintenables.",
+    personalNote:
+      "Passionné par l'architecture logicielle et les patterns de conception, je m'efforce de produire du code clean et testable qui facilite la collaboration en équipe.",
+    skills: [
+      'C#',
+      '.NET Core',
+      'Angular',
+      'TypeScript',
+      'Azure',
+      'SQL Server',
+      'Entity Framework',
+      'REST APIs',
+    ],
+  },
 }
 
 const mainDescription = computed(() => portfolioData[currentPortfolio.value].mainDescription)

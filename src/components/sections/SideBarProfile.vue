@@ -45,7 +45,6 @@
           class="transition-transform hover:scale-110"
           size="lg"
         />
-
       </a>
     </div>
   </aside>
