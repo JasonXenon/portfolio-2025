@@ -2,11 +2,24 @@
   <section id="projects" class="text-gray-300 py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-3xl">
       <div class="mb-16">
-        <h2 class="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-2">
+        <h2
+          :class="[
+            'font-mono text-sm tracking-widest uppercase mb-2 transition-colors duration-500',
+            currentPortfolio === 'laravel' ? 'text-emerald-400' : 'text-blue-400',
+          ]"
+        >
           02. Réalisations
         </h2>
         <h3 class="text-3xl font-bold text-white tracking-tight">
-          Projets <span class="text-emerald-400">sélectionnés</span>
+          Projets
+          <span
+            :class="[
+              'transition-colors duration-500',
+              currentPortfolio === 'laravel' ? 'text-emerald-400' : 'text-blue-400',
+            ]"
+          >
+            sélectionnés
+          </span>
         </h3>
       </div>
 
@@ -25,7 +38,12 @@
           v-for="(project, index) in projects"
           :key="`${currentPortfolio}-${project.id}`"
           :style="{ transitionDelay: `${index * 100}ms` }"
-          class="group relative p-6 -mx-6 rounded-2xl transition-all duration-300 hover:bg-slate-800/40 border border-transparent hover:border-red-900/30"
+          :class="[
+            'group relative p-6 -mx-6 rounded-2xl transition-all duration-300 border border-transparent',
+            currentPortfolio === 'laravel'
+              ? 'hover:bg-slate-800/40 hover:border-red-900/30'
+              : 'hover:bg-slate-800/40 hover:border-blue-900/30',
+          ]"
         >
           <a
             v-if="project.live"
@@ -77,7 +95,10 @@
                 v-if="project.github"
                 :href="project.github"
                 :target="project.target"
-                class="p-1 text-slate-500 hover:text-emerald-400 transition-colors hover:scale-110 transform"
+                :class="[
+                  'p-1 text-slate-500 transition-colors hover:scale-110 transform',
+                  currentPortfolio === 'laravel' ? 'hover:text-emerald-400' : 'hover:text-blue-400',
+                ]"
                 title="Code source"
               >
                 <span class="sr-only">GitHub</span>
@@ -127,21 +148,11 @@ const allProjects = {
   dotnet: [
     {
       id: 1,
-      title: 'Enterprise Resource Planning',
+      title: 'CodeDex - Bibliothèque de Snippets de Code',
       description:
-        "Système de gestion d'entreprise complet développé avec .NET Core et Angular. Gère la comptabilité, les stocks, les ressources humaines et la relation client dans une interface moderne et intuitive.",
-      stack: ['C#', '.NET Core', 'Angular', 'SQL Server'],
-      github: '#',
-      live: '#',
-      target: '_blank',
-    },
-    {
-      id: 2,
-      title: 'API Gateway Microservices',
-      description:
-        'Architecture microservices avec API Gateway pour une application e-commerce à grande échelle. Implémente des patterns CQRS et Event Sourcing pour garantir la scalabilité et la résilience du système.',
-      stack: ['.NET', 'Azure', 'Docker', 'RabbitMQ'],
-      github: '#',
+        "Une application web conçue pour les développeurs, offrant une bibliothèque organisée de snippets de code. CodeDex facilite la gestion, la recherche et le partage de morceaux de code réutilisables, optimisant ainsi le flux de travail des programmeurs.",
+      stack: ['C#', '.NET Core', 'Blazor', 'SQL Server', 'Google OAuth', 'CQS Pattern'],
+      github: 'https://github.com/JasonXenon/CodeDex',
       live: '#',
       target: '_blank',
     },

@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import SideBarProfile from '@/components/sections/SideBarProfile.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
 import PortfolioToggle from '@/components/PortfolioToggle.vue'
 import { usePortfolio } from '@/composables/usePortfolio'
 
-const { initializePortfolio } = usePortfolio()
+const { initializePortfolio, currentPortfolio } = usePortfolio()
+
+const backgroundGradient = computed(() => {
+  return currentPortfolio.value === 'laravel'
+    ? 'bg-gradient-to-br from-red-950 via-slate-900 to-emerald-950'
+    : 'bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950'
+})
 
 onMounted(() => {
   initializePortfolio()
@@ -15,7 +21,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="min-h-screen bg-gradient-to-br from-red-950 via-slate-900 to-emerald-950 text-gray-300"
+    :class="['min-h-screen text-gray-300 transition-colors duration-700', backgroundGradient]"
   >
     <PortfolioToggle />
 
