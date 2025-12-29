@@ -5,6 +5,7 @@ import AboutSection from '@/components/sections/AboutSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
 import PortfolioToggle from '@/components/PortfolioToggle.vue'
 import { usePortfolio } from '@/composables/usePortfolio'
+import Contact from '@/components/contact/Contact.vue'
 
 const { initializePortfolio, currentPortfolio } = usePortfolio()
 
@@ -35,6 +36,7 @@ onMounted(() => {
         <main>
           <AboutSection />
           <ProjectsSection />
+          <Contact />
         </main>
       </div>
     </div>

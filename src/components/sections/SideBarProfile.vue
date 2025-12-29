@@ -69,6 +69,7 @@ const props = defineProps({
 const navLinks = [
   { id: 1, label: 'ABOUT', href: '#about' },
   { id: 2, label: 'PROJECTS', href: '#projects' },
+  { id: 3, label: 'CONTACT', href: '#contact' },
 ]
 
 // Réseaux sociaux
