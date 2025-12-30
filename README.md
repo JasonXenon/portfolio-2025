@@ -1,48 +1,92 @@
-# portfolio-2025
+# Portfolio — Jason Levecq
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio personnel de développeur **Full Stack** mettant en avant mes projets, mon parcours et mes compétences techniques.  
+Ce site a été conçu comme une vitrine professionnelle, avec un fort accent sur la lisibilité, l’expérience utilisateur et la cohérence visuelle.
 
-## Recommended IDE Setup
+👉 **Objectif** : présentation de mon profil dans le cadre d’une recherche de **poste en CDI**.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## 🚀 Aperçu
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Portfolio dynamique avec **deux orientations techniques** :
+  - Laravel / Vue.js
+  - .NET / C#
+- Navigation fluide avec sections synchronisées
+- Design moderne, sobre et orienté recruteur
+- Responsive (desktop / mobile)
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🛠️ Stack technique
 
-## Customize configuration
+### Frontend
+- **Vue 3** (Composition API, `<script setup>`)
+- **TypeScript**
+- **Tailwind CSS**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Écosystèmes présentés
+- **Laravel**
+- **.NET / C#**
 
-## Project Setup
+### Outils & bonnes pratiques
+- Git & GitHub
+- Vite
+- Composants réutilisables
+- Animations & transitions Vue
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## ✨ Fonctionnalités clés
 
-```sh
-npm run dev
-```
+- 🎨 Thème dynamique selon l’orientation technique
+- 🧭 Navigation latérale sticky avec section active
+- 🧩 Architecture claire et maintenable
+- 📱 Responsive design
+- ⚡ Performance et sobriété (pas de dépendances inutiles)
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## 📸 Projets présentés
 
-### Lint with [ESLint](https://eslint.org/)
+- **TeamBudget** — Plateforme de transparence financière
+- **EcoSens** — Gestion budgétaire intelligente
+- **CodeDex** — Bibliothèque de snippets de code
 
-```sh
-npm run lint
-```
+Chaque projet inclut :
+- description fonctionnelle
+- stack technique
+- lien GitHub
+- lien live si disponible
+
+---
+
+## 🧠 Philosophie
+
+> Apporter de la clarté là où résident les données complexes.
+
+Je m’attache à produire :
+- des interfaces accessibles
+- du code lisible et maintenable
+- des solutions pensées pour l’utilisateur final
+
+---
+
+## 🧑‍💻 À propos
+
+Développeur **web junior / full stack**, actuellement à la recherche d’un **poste en CDI**.  
+Intéressé par des projets où la qualité du code et l’expérience utilisateur sont prioritaires.
+
+---
+
+## 📬 Contact
+
+- 📧 Email : levecqjason@gmail.com
+- 💼 LinkedIn : https://www.linkedin.com/in/jason-levecq/
+- 💻 GitHub : https://github.com/JasonXenon
+
+---
+
+## 📄 Licence
+
+Projet personnel — librement consultable à des fins d’évaluation professionnelle.
